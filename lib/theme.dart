@@ -33,12 +33,12 @@ ThemeData primaryTheme =ThemeData(
   ),
   textTheme: TextTheme(
     bodyMedium: TextStyle(
-      color: AppColors.textColor,
+      color: AppColors.titleColor,
       letterSpacing: 1,
       fontSize: 16,
     ),
     titleMedium: TextStyle(
-      color: AppColors.textColor,
+      color: AppColors.titleColor,
       fontWeight: FontWeight.bold,
       fontSize: 16,
       letterSpacing: 1,
@@ -49,5 +49,20 @@ ThemeData primaryTheme =ThemeData(
         fontWeight: FontWeight.bold,
         letterSpacing: 2,
       )    
-  )
+  ),
+  cardTheme: CardThemeData(
+   surfaceTintColor: Colors.transparent,
+   color: AppColors.secondaryColor.withOpacity(0.5),
+   shadowColor: Colors.transparent,
+   shape: RoundedRectangleBorder(),
+   margin:const EdgeInsets.only(bottom: 16),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    border: InputBorder.none,
+    filled: true,
+    fillColor: AppColors.secondaryColor.withOpacity(0.5),
+    prefixIconColor: AppColors.textColor,
+    labelStyle: TextStyle(color: AppColors.textColor),
+  ),
 );
+

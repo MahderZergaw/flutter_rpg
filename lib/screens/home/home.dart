@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/models/character.dart';
+import 'package:flutter_rpg/screens/create/create.dart';
+import 'package:flutter_rpg/screens/home/character_card.dart';
+import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
+// import 'package:flutter_rpg/theme.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,6 +14,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
+  // List characters = ['kelemuwa','alemu','feriyat','zeberiga'];
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -18,14 +26,20 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(16),
         child:Column(
           children: [
-            Text('home'),
-              StyledText('home'),
-                StyledHeading('home'),
-                  StyledTitle('home'),
-            FilledButton(onPressed: (){}, child: Text('data'))
+             Expanded(
+               child: ListView.builder(
+                itemCount: characters.length,
+                itemBuilder: (_,index){
+                  return CharacterCard(characters[index]);
+             }),
+             ),
+            StyledButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (builder)=> Create()));
+                }, child: StyledHeading('Create New'))
           ])
         ),
     );
