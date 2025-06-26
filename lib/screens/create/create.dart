@@ -37,7 +37,7 @@ setState(() {
     if(_nameController.text.trim().isEmpty){
       showDialog(context: context, builder: (builder){
         return AlertDialog(
-          title: StyledHeading("Missing Character Name"),
+          title: Center(child: StyledHeading("Missing Character Name")),
           content: StyledText('Every good RPG character needs a great name...'),
           actions: [
             StyledButton(onPressed: (){
@@ -53,7 +53,7 @@ setState(() {
     if(_sloganController.text.trim().isEmpty){
       showDialog(context: context, builder: (builder){
         return AlertDialog(
-          title: StyledHeading("Missing Character Name"),
+          title: Center(child: StyledHeading("Missing Character Name")),
           content: StyledText("Every good RPG character needs a great name..."),
           actions: [
             StyledButton(onPressed: (){
@@ -134,8 +134,10 @@ setState(() {
                 Center(
                 child: Icon(Icons.code,color: AppColors.primaryColor,),
               ),
+              SizedBox(height: 10,),
               Center(child: StyledHeading("Good Luck"),),
               Center(child: StyledTitle("And enjoy the journey ahead..."),),
+              SizedBox(height: 10,),
               Center(
                 child:StyledButton(onPressed: handleSubmit, child: StyledText("Create Character")),
               ),

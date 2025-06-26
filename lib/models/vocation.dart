@@ -1,7 +1,7 @@
 enum Vocation {
    raider(
-    title: "Terminal", 
-    description: "Adept in terminal commands.",
+    title: "Terminal Raider", 
+    description: "Adept in terminal commands to trigger traps.",
     weapon: "Terminal",
     ability: "Shellshock",
     image: "terminal_raider.jpg"
